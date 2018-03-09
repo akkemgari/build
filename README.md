@@ -30,7 +30,7 @@ The Kickstart files used by the builder are derived from the ones we use for on-
 
 There is a common shell provisioning script which runs for all builds, that turns off the default requirement for a tty for sudo (causes problems for chef), adds a few basic repos from the prod tag, runs yum update, installs a few extra packages, and disables non-required services. For AMI builds, prerequisites for CloudFormation are installed, CloudFormation is built from the latest sources, the AWS CLI is installed, an ec2-user is created and added to sudoers, cloud-init is installed, and an xx-build.yaml file is created with some basic build details. For Vagrant builds, a vagrant user is created and added to sudoers, the standard vagrant key is added (which vagrant uses and then replaces when it brings up a box), and an xx-build.yaml file is created with some basic build details.
 
-The AWS CLI piece is a list of commands that are run to upload the ova file to S3, import it from S3 to an EC2 AMI, copy the AMI to any other regions, set launch permissions for that AMI to all NIBR accounts in all regions, and set standard tags everywhere. This is about 3/4 automated currently, with some bugs remaining to be worked out with the tags.
+The AWS CLI piece is a list of commands that are run to upload the ova file to S3, import it from S3 to an EC2 AMI, copy the AMI to any other regions, set launch permissions for that AMI to all FIBR accounts in all regions, and set standard tags everywhere. This is about 3/4 automated currently, with some bugs remaining to be worked out with the tags.
 
 
 ### How do I get set up? ###
@@ -48,11 +48,11 @@ Note that, while this is all code that has been used creating the current build 
 
 
 ### Okay I'm set up. How do I do X?
-* Create a new full set of nx_core builds:
+* Create a new full set of xx_core builds:
     * Run `build_images`
 
 * Upload an image provided in ova format:
-    * Peruse the code in env.sh, then run the commands that it would run for nx_core, substituting the provided ova file and associated metadata
+    * Peruse the code in env.sh, then run the commands that it would run for xx_core, substituting the provided ova file and associated metadata
     * Yes, this will be easier in the future. It's just competing with a few dozen other items for development time
 
 * Perform other management tasks:
@@ -63,8 +63,8 @@ Note that, while this is all code that has been used creating the current build 
 
 ### Contribution guidelines ###
 
-* If you have a request for something to be added to the nx_core build or to the general image upload process, create a ticket in the NXCR project in JIRA, and assign to snydesc1
-* If you are directly modifying or adding to the process, be aware that on nrusca-sld4002 (the current build server), this repo is checked out under root to snydesc1, so you'll need to either change that or bug snydesc1 to push/pull your changes
+* If you have a request for something to be added to the xx_core build or to the general image upload process, create a ticket in the XXCR project in JIRA, and assign to 1
+* If you are directly modifying or adding to the process, be aware that on xxx-22 (the current build server), this repo is checked out under root to 1, so you'll need to either change that or bug 1 to push/pull your changes
 
 
 ### Who do I talk to? ###
