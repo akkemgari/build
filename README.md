@@ -68,6 +68,3 @@ Note that, while this is all code that has been used creating the current build 
 
 
 ### Who do I talk to? ###
-
-* Generally speaking, this code is owned and supported by Linux Platform Engineering (platform_eng_linux_ORG@dl.mgd.novartis.com)
-* But currently, Scott Snyder (scott.snyder@novartis.com) is the one doing almost all of the development, so bug him first
